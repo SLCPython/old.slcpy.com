@@ -43,7 +43,7 @@ LOCAL_APPS = (
     'slcpy', # metapp for settings
 
     'profiles',
-    'pages',
+    #'pages',
 )
 
 THIRD_PARTY_APPS = (

@@ -1,0 +1,94 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coal.io {% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap  3.0 -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-theme.min.css' %}" />
+    <!-- custom sass-css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+
+    {% block extra_css %}
+    {% endblock %}
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->    
+
+  </head>
+  <body>
+    <div id='wrap'>
+    {% block navbar %}
+        {# {% include 'coalio/navbar_includes/usernavbar.html' %} #}
+    {% endblock %}
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <div class="alert{% if message.tags %} alert-{{ message.tags }}{% endif %} alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {{ message }}
+        </div>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'discussions:home' %}"><img src="{% static 'img/icon-38.png' %}"/> YMCA Anti-Cyberbullying Project</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{% url 'discussions:home' %}">Home</a></li>
+            <li><a href="{% url 'pages:view' slug='about' %}">About</a></li>
+            <li><a href="{% url 'pages:view' slug='prevent-cyberbullying' %}">Prevent Cyberbullying</a></li>
+            <li><a href="{% url 'pages:view' slug='report-cyberbullying' %}">Report Cyberbullying</a></li>
+          </ul>
+          <ul class="nav pull-right">
+            <li style="float:left;"><a href="/accounts/login"><span class='glyphicon glyphicon-log-in'></span> Login</a></li>
+            {# <li style="float:left;"><a href="/accounts/register">Sign Up</a></li> #}
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+    	<div class="main-view">
+        {% block body %}
+    	{% endblock %}
+      </div>
+    </div><!-- /container -->
+
+    </div><!-- /wrap -->
+    
+
+    <footer class="navbar-collapse collapse" style="  background-color: #000000;color: #999999;padding-top:9px;position: fixed;bottom: 0;width: 100%;">
+        <div class='container'>
+        {% block footer %}
+            {# {% include 'coalio/includes/footer.html' %} #}
+        {% endblock %}
+        <p><img src="{% static 'img/icon-16.png' %}" height="16" width="16"/> Created @ 2014 Hackdance PC,UT ☺ Coalio → [Faris, Michael, Sam, Joseph, Eric]</p>
+        </div>
+    </footer>
+
+    {% block extra_js %}
+    {% endblock %}
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    
+  </body>
+</html>
