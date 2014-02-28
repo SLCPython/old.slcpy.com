@@ -37,3 +37,6 @@ nosetests.xml
 
 *.swp
 *.sublime*
+
+apps/slcpy/settings/local_settings.py
+
