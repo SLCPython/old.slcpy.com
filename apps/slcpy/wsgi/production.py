@@ -15,6 +15,7 @@ framework.
 """
 
 import os
+
 try:
     import djcelery
     djcelery.setup_loader()
