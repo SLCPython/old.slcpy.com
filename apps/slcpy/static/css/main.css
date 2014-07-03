@@ -1,15 +1,41 @@
 body {
   padding-top: 50px;
 }
+
+/* main */
+
 .main-view {
   padding: 40px 15px;
   text-align: center;
 }
 
-.main-view h3{
-	text-align: left;
+.main-view h3 {
+  text-align: left;
 }
 
-.main-view .chat{
-	border: 5px;
+.main-view .chat {
+  border: 5px;
 }
+
+/* tables */
+
+table {
+  width: 100%;
+}
+
+table.login-title {
+  text-align: left;
+  background-color: transparent;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+table.login-title th {
+  padding-left: 1em;
+}
+
+table.default {
+  width: 100%;
+  text-align: left;
+}
+
