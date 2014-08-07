@@ -3,9 +3,9 @@ slcpy.com
 
 Official Repo of SLCPython's website
 
-[github](https://github.com/SLCPython)  
-[twitter](https://twitter.com/slcpy)  
-[meetup](www.meetup.com/Salt-Lake-City-Python-Web-Developers/)  
+[github](https://github.com/SLCPython)
+[twitter](https://twitter.com/slcpy)
+[meetup](www.meetup.com/Salt-Lake-City-Python-Web-Developers/)
 
 ## Contributing
 

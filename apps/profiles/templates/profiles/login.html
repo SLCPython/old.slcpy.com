@@ -9,22 +9,7 @@
 
 {% block body %}
 
-<!-- How do I include this as a separate html file so I can use this segment again-->
-<table class='table login-title'>
-  <tr>
-    <th>
-      <img src="{% static 'img/SLCPython-logo-140.png' %}" alt="SLCPython"/>      
-    </th>
-    <th>
-      <h1>
-         Welcome to SLC Python Developer's
-      </h1>
-    </th>
-  </tr>
-</table>
-<!-- How do I include this as a separate html file so I can use this segment again-->
-
-<br/>
+{% include "profiles/includes/header.html" %}
 
 <form class="form-signin" action="{% url 'home' %}" method="POST">
   <h2 class="form-signin-heading">Please sign in</h2>
