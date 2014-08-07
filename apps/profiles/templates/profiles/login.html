@@ -4,9 +4,13 @@
 {% block extra_css %}
 <!-- login css -->
 <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
 {% endblock %}
 
 {% block body %}
+
+{% include "profiles/includes/header.html" %}
+
 <form class="form-signin" action="{% url 'home' %}" method="POST">
   <h2 class="form-signin-heading">Please sign in</h2>
   {% csrf_token %}

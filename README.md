@@ -16,9 +16,16 @@ Official Repo of SLCPython's website
 
 ### Local Dev Set up
 
-Install virtualenv & virtualenvwrapper
+Install pip. If you have `easy_install` (check `which easy_install` ) you can 
+run 
 
-Activate virtualenvwrapper
+`easy_install pip`
+
+[Install virtualenv & virtualenvwrapper](http://virtualenv.readthedocs.org/en/latest/virtualenv.html)
+
+`pip install virtualenv virtualenvwrapper`
+
+Create and activate virtualenvwrapper
 
 `mkvirtualenv slcpy`
 
