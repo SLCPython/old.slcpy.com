@@ -40,3 +40,4 @@ nosetests.xml
 
 apps/slcpy/settings/local_settings.py
 
+slcpy.db
