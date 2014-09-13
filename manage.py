@@ -6,7 +6,7 @@ if __name__ == "__main__":
 
     # decide which settings to use
     base_dir = os.path.dirname(__file__)
-    local_settings_module = "slcpy/settings/local_settings.py")    
+    local_settings_module = "slcpy/settings/local_settings.py"
     if os.path.isfile(os.path.join(base_dir,"apps",local_settings_module)):
         django_settings_module = local_settings_module
     else:
