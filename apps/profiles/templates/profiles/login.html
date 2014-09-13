@@ -1,16 +1,7 @@
 {% extends "slcpy/_base.html" %}
 {% load staticfiles %}
 
-{% block extra_css %}
-<!-- login css -->
-<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
-{% endblock %}
-
 {% block body %}
-
-{% include "profiles/includes/header.html" %}
-
 <form class="form-signin" action="{% url 'home' %}" method="POST">
   <h2 class="form-signin-heading">Please sign in</h2>
   {% csrf_token %}
@@ -21,4 +12,7 @@
   {{ login_form.password }}
   <button class="btn btn-lg btn-primary btn-block" type="submit"><span class='glyphicon glyphicon-log-in'></span> Sign in</button>
 </form>
+<p>
+    <a href="{% url 'register' %}">Sign up </a>
+</p>
 {% endblock %}

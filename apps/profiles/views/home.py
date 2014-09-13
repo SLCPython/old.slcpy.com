@@ -46,6 +46,11 @@ def login_view(request):
 
     return render(request, 'profiles/login.html', ctx)
 
+
+def register_view (request):
+    # TODO:  implement profiles.views.home.register_view
+    return login_view(request)
+    
 def index(request):
     ctx = {}
     ctx['home_active'] = True
