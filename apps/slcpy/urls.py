@@ -6,19 +6,22 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    url(r'^$', 'profiles.views.home.login_view', name='home'),
-    url(r'^profiles/', include('profiles.urls', namespace='profiles')),
-    url(r'^accounts/login/$', 'profiles.views.home.login_view', name='login'),
-    # url(r'^/', include('pages.urls', namespace='pages')),
+    # ----------------------- Home
+    url(r'^$', 'slcpy.views.home.main_view', name='home'),
 
-    # API urls
+    # ----------------------- profile
+    url(r'^login$', 'profiles.views.home.login_view', name='login'),    
+    url(r'^register$', 'profiles.views.home.register_view', name='register'),          
+    url(r'^profiles/', include('profiles.urls', namespace='profiles')),
+    # TODO:  url(r'^logout$', 'profiles.views.home.logout_view', name='logout'),        
+
+    # ----------------------- API urls
     #url(r'^api/', include(tagged_post.urls)),
 
-    # 3rd party urls
+    # ----------------------- 3rd party urls
     url(r'^search/', include('haystack.urls', namespace='search')),
 
-    # admin urls
+    # ----------------------- admin urls
     url(r'^admin/', include(admin.site.urls)),
 )
 
