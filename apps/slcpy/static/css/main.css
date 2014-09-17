@@ -1,5 +1,93 @@
 body {
   padding-top: 50px;
+  background:  linear-gradient(#FFFFFF,#C4FFEC); /*#CACACA;*/
+
+}
+
+header {
+    background: #1F1F1F;
+    width: 100%;
+    height: 76px;
+    position: fixed;
+    top: 0;
+    left: 0;    
+    z-index: 100;
+
+    /* gradients */
+    background: -webkit-gradient(linear, left top, left bottom, 
+    color-stop(0%, #6B6B6B), color-stop(15%, #303030), color-stop(100%, #0F0F0F)); 
+    background: -moz-linear-gradient(top, #6B6B6B 0%, #303030 35%,  #0F0F0F 130%);     
+}
+ 
+footer {
+    background: #1F1F1F;    
+    color: #E0E0E0;
+    height: auto;
+    position: absolute;
+    width: 100%;
+}
+
+
+.jumbotron {
+    /*Rounded Corners*/
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;  
+
+}
+
+/* Menu bar items */
+#logo {
+    margin: 2.5px;
+    position: absolute;
+}
+
+#title {
+    margin-left: 87px;
+    padding-top: 12px;
+    color: #FFF;
+    text-align: left;
+    vertical-align: middle;
+    letter-spacing: 1px;
+    position: fixed;
+    font-size:35px;
+
+}
+nav {
+    float: right;
+    padding-bottom: 5px;  
+    padding-right: 20px;
+    font-size: 21px;
+/*     margin-left:200px; */
+
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    float: left;
+    margin: 10px;
+}
+
+nav #menu-icon {
+    display: hidden;
+    width: 50px;
+    height: 50px; 
+    background: #4C8FEC center;     
+    margin-top:9px;
+    margin-right:20px;
+    
+/*     url(images/menu-icon.png) center; */
+/* TODO: add an image, or modify how menu-icon is done. It would
+    be nice to use the icons.css
+ */
+}
+
+nav:hover #menu-icon {
+    background-color: #444;  
 }
 
 /* main */
@@ -17,7 +105,80 @@ body {
   text-align: left;
 }
 
-.main-view .chat {
-  border: 5px;
+#sponsors-list {
+    list-style-type: none;
+    display: block;
+    padding: 10px;
+    border-radius: 4px 0 4px 4px;    
 }
 
+img.sponsor {
+    background: #FFF;
+    margin: 8px;
+    /*Rounded Corners*/
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    border-radius: 13px;  
+
+}
+
+/*MEDIA QUERY*/
+@media only screen and (max-width : 630px) { /*If device width is higher than 640px use this css and if less than 640px use above */
+
+    header {
+        position: absolute;
+
+    }
+    #title {
+        position: absolute;
+    }
+    
+    /* Menu bar items */
+    
+    nav ul, nav:active ul { 
+        display: none;
+        position: absolute;
+        padding: 10px;
+        background: #1F1F1F;
+        color: #62C9F8;
+        right: 20px;
+        top: 65px;
+        width: 100px;
+        border-radius: 4px 0 4px 4px;
+    }
+    
+    nav li {
+        text-align: center;
+        width: 100%;        
+        padding: 10px 0;
+        margin: 0;    
+    }
+    
+    nav:hover ul {
+        display: block;
+        /*Transition*/
+        -webkit-transition: All 0.8s ease;
+        -moz-transition: All 0.8s ease;
+        -o-transition: All 0.8s ease;
+        -ms-transition: All 0.8s ease;
+        transition: All 0.8s ease;        
+    }
+    
+    nav #menu-icon {
+        display:inline-block;
+        /*Rounded Corners*/
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+ 
+        /*Shadow*/
+        -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+        
+    }
+    
+    nav:hover #menu-icon {
+        background-color: #62C9F8;  
+    }    
+}

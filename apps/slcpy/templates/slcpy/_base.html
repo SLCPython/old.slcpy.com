@@ -6,6 +6,9 @@
     <title>SLCPy.com {% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    {% block pre_css %}
+    {% endblock %}    
+    
     <!-- Bootstrap  3.0 -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-theme.min.css' %}" />
@@ -19,51 +22,28 @@
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->    
+     <![endif]-->    
     
   </head>
 <!-- ============================== BODY =================================== -->  
   <body>
-    <!-- - - - - - - - - - -  Navigation bar - - - - - - - - - - - - -->
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>             
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav pull-right">
-            <li style="float:left;">
-                <a href="{% url 'home' %}">Home</a>                
-            </li>
-            <li style="float:left;">
-                <a href="{% url 'login' %}"><span class='glyphicon glyphicon-log-in'></span> Login</a>
-            </li>
-            <li style="float:left;">
-                <a href="{% url 'register' %}">Sign Up</a>
-            </li>
-        </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>  
+    <!-- - - - - - - - - - -  navigation toolbar - - - - - - - - - - - - -->
+    <header>
+        <a href="#" id="logo">
+            <img src="{% static 'img/SLCPython-logo-70.png' %}" alt="SLCPython"/>            
+        </a>
+        <span id="title">SLCPython</span>        
+        <nav>
+            <a id="menu-icon"></a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/events">Events</a></li>                
+                <li><a href="http://www.meetup.com/Salt-Lake-City-Python-Web-Developers/join/">Join our Meetup!</a></li>
+                <!-- TODO: <li><a href="/contact-us">Contact Us</a></li>                                 -->
+            </ul>
+        </nav>
+    </header> 
     <div id='wrap'>        
-        <!-- - - - - - - - - - -  messages - - - - - - - - - - - - -->    
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <div class="alert{% if message.tags %} alert-{{ message.tags }}{% endif %} alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            {{ message }}
-            </div>
-            {% endfor %}
-        </ul>
-        {% endif %}
-
         <!-- - - - - - - - - - -  primary content - - - - - - - - - - - - -->
         <section>
             <div class="main-view">
@@ -71,17 +51,17 @@
                 {% endblock %}
             </div>
         </section>
-    </div><!-- /wrap -->
+    </div>
     
     <!-- - - - - - - - - - -  page footer - - - - - - - - - - - - - - - -->
-    <footer class="navbar-collapse collapse" style="  background-color: #000000;color: #999999;padding-top:9px;position: fixed;bottom: 0;width: 100%;">
-        <div class='container'>
+    <footer>
         {% block footer %}
-        <!--         TODO: add contact us -->
-        <!--         TODO: add suggestions box -->                
+        <!-- TODO: add contact us link -->
+        <!-- TODO: add suggestions box link -->                
         {% endblock %}
-        <p>Created @ 2014 SLCPython → [Faris, Michael, Sam, Joseph, Eric, Dylan]</p>
-        </div>
+        <p>
+            Created @ 2014 SLCPython → [Dylan, Faris, Michael, Sam, Joseph, Eric]
+        </p>
     </footer>
     
     <!-- - - - - - - - - - -  js content - - - - - - - - - - - - - - - -->

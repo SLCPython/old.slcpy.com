@@ -1,37 +1,63 @@
 {% extends "slcpy/_base.html" %}
 {% load staticfiles %}
 
-{% block extra_css %}
-{% endblock %}
-
 {% block body %}
+<!-- - - - - - - - - - -  Jumbotron - - - - - - - - - - - - -->
 <div class="jumbotron">
   <section>
-    <h1> Welcome to ... SLCPython </h1>
+    <h1> Salt Lake City Python Developers </h1>
     <br>
-    <img src="{% static 'img/SLCPython-logo-140.png' %}" alt="SLCPython"/>
+    {% block jumbotron-home %}
+    {% endblock %}
   </section>
 </div>
 
+<!-- - - - - - - - - - -  About us - - - - - - - - - - - - -->
 <section>    
     <h3> About Us </h3> 
     <p>
         We are a Salt Lake City based Python users group started January 2014. We meet monthly to discuss Python and network with other awesome pythonistas.     
     </p>
     <p>
-        To stay up to speed, follow us on <a href="http://www.meetup.com/">Meetup</a>
+        For current news follow us using <a href="http://www.meetup.com/Salt-Lake-City-Python-Web-Developers/join/">Meetup.com</a>
     </p>        
 </section>
-    
+
+<!-- - - - - - - - - - - Resources - - - - - - - - - - - - -->
+<section>    
+    <h3> Resources </h3> 
+    <ul>
+        <li>
+            <a href="http://www.meetup.com/Salt-Lake-City-Python-Web-Developers/">SLCPython Meetup</a>
+        </li>
+        <li>
+            <a href="https://github.com/SLCPython">SLCPython Github</a>
+        </li>    
+    </ul>
+    </br>
+    </br>
+    </br>        
+</section>    
+ 
+<!-- - - - - - - - - - -  Sponsors - - - - - - - - - - - - -->   
 <section>
     <h3> Primary Sponsors </h3>
     <ul id='sponsors-list'>
         <li>
-            <a href="https://www.zaniaclearning.com/">Zaniac</a>        
+            <a href="https://www.zaniaclearning.com/">
+                <img class="sponsor" src="{% static 'img/sponsors/zaniac-500x200.png' %}" alt="Zaniac"/>            
+            </a>      
         </li>
         <li>
-            <a href="http://www.teksystems.com/">TEKSystems</a>
+            <a href="http://www.teksystems.com/">
+                <img class="sponsor"  src="{% static 'img/sponsors/TEK Systems-517x167.png' %}" alt="TEKSystems"/>            
+            </a>      
         </li>
+        <li>
+            <a href="https://www.bluehost.com/">
+                <img class="sponsor" src="{% static 'img/sponsors/bluehost-624x165.png' %}" alt="BlueHost"/>            
+            </a>             
+        </li>        
         <!-- TODO: add other sponsors -->
         <!-- TODO: add images for sponsors -->
     </ul>
