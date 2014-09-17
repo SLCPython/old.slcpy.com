@@ -41,15 +41,13 @@ DJANGO_APPS = (
 
 LOCAL_APPS = (
     'slcpy', # metapp for settings
-
     'profiles',
-    #'pages',
 )
 
 THIRD_PARTY_APPS = (
+    'meetup',
     'taggit',
     'tastypie',
-
     'south',
     'haystack',
 )
@@ -76,7 +74,7 @@ WSGI_APPLICATION = 'slcpy.wsgi.application'
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'US/Mountain'
 
 USE_I18N = True
 
@@ -104,3 +102,27 @@ HAYSTACK_CONNECTIONS = {
 
 # Our site can handle this
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+# Meetup
+
+MEETUP_KEY = ""
+
+# **Security Warning:** Keep personal Meetup api key secret.
+# Read `Meetup documentation <https://secure.meetup.com/meetup_api/key/>`_.
+# create a file "slcpy.com/apps/slcpy/settings/local_settings.py" 
+# which won't be tracked by git and add the lines
+# from local import *
+# MEETUP_KEY = "abc123"
+
+MEETUP_GROUP_ID = 12004972
+
+# (optional) This is the default group id to get information from  
+    
+MEETUP_ALLOW_ADMIN = False
+
+# (optional) This boolean will set up admin interface. 
+# **WARNING:** Methods to sync TO Meetup have not been completed. 
+#    So any changes to the database are local.
+    
+
+
