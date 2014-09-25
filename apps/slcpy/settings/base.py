@@ -41,7 +41,7 @@ DJANGO_APPS = (
 
 LOCAL_APPS = (
     'slcpy', # metapp for settings
-    'profiles',
+    'meetup',
 )
 
 THIRD_PARTY_APPS = (
