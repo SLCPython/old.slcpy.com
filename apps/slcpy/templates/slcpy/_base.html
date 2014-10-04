@@ -37,30 +37,30 @@
   <body id='home'>
     <!-- - - - - - - - - - -  navigation toolbar - - - - - - - - - - - - -->
     <header>
-        <a href="#" id="logo">
-            <img src="{% static 'img/SLCPython-logo-70.png' %}" alt="SLCPython"/>            
-        </a>
-        <span id="title">SLCPython</span>        
-        <nav>
-            <a id="menu-icon"></a>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/events">Events</a></li>                
-                <li><a href="http://www.meetup.com/Salt-Lake-City-Python-Web-Developers/join/">Join our Meetup!</a></li>
-                <!-- TODO: <li><a href="/contact-us">Contact Us</a></li>                                 -->
-            </ul>
-        </nav>
-    </header> 
-    <div id='wrap'>        
-        <!-- - - - - - - - - - -  primary content - - - - - - - - - - - - -->
-        <section>
-            <div class="main-view">
-                {% block body %}
-                {% endblock %}
-            </div>
-        </section>
+      <a href="#" id="logo">
+        <img src="{% static 'img/SLCPython-logo-70.png' %}" alt="SLCPython"/>
+      </a>
+      <span id="title">SLCPython</span>
+      <nav>
+        <a id="menu-icon"></a>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="{{ slcpy_meetup_url_join }}">Join our Meetup!</a></li>
+          <!-- TODO: <li><a href="/contact-us">Contact Us</a></li>                                 -->
+        </ul>
+      </nav>
+    </header>
+    <div id='wrap'>
+      <!-- - - - - - - - - - -  primary content - - - - - - - - - - - - -->
+      <section>
+        <div class="main-view">
+          {% block body %}
+          {% endblock %}
+        </div>
+      </section>
     </div>
-    
+  
     <!-- - - - - - - - - - -  page footer - - - - - - - - - - - - - - - -->
     <footer>
         {% block footer %}
@@ -68,7 +68,7 @@
         <!-- TODO: add suggestions box link -->                
         {% endblock %}
         <p>
-            Created @ 2014 SLCPython → [Dylan, Faris, Michael, Sam, Joseph, Eric]
+            Created @ 2014 SLCPython → [Dylan, Faris, Joseph, Michael, Sam,  Eric]
         </p>
     </footer>
     
