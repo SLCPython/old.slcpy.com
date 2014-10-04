@@ -23,6 +23,22 @@ DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
+# template handling 
+TEMPLATE_DIRS = (
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(BASE_DIR, "slcpy", "templates"),
+    os.path.join(BASE_DIR, "meetup", "templates"),    
+)
+
+# List of callables that know how to import templates from various sources.
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+#     'django.template.loaders.eggs.Loader',
+)
+
 ALLOWED_HOSTS = [
     'slcpy.com',
     'slcpy.metacogni.tv.',
@@ -65,8 +81,6 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'slcpy.urls'
 
-LOGOUT_URL = '/profiles/logout/'
-
 WSGI_APPLICATION = 'slcpy.wsgi.application'
 
 # Internationalization
@@ -74,7 +88,7 @@ WSGI_APPLICATION = 'slcpy.wsgi.application'
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'US/Mountain'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -82,7 +96,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-AUTH_USER_MODEL = "profiles.SLCPyUser"
+#AUTH_USER_MODEL = "profiles.SLCPyUser"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
@@ -105,24 +119,20 @@ HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 # Meetup
 
-MEETUP_KEY = ""
+# This is hard coded so that we don't have to rely on the meetup_client from your
+# MEETUP_API_KEY
+SLCPY_MEETUP_URL = "http://www.meetup.com/Salt-Lake-City-Python-Web-Developers/"
 
-# **Security Warning:** Keep personal Meetup api key secret.
+# MEETUP_API_KEY **Security Warning:** Keep personal Meetup api key secret.
 # Read `Meetup documentation <https://secure.meetup.com/meetup_api/key/>`_.
 # create a file "slcpy.com/apps/slcpy/settings/local_settings.py" 
 # which won't be tracked by git and add the lines
 # from local import *
-# MEETUP_KEY = "abc123"
-
-MEETUP_GROUP_ID = 12004972
+# MEETUP_API_KEY = "abc123"
+MEETUP_API_KEY = ""
 
 # (optional) This is the default group id to get information from  
-    
-MEETUP_ALLOW_ADMIN = False
+MEETUP_GROUP_ID = 12004972
 
-# (optional) This boolean will set up admin interface. 
-# **WARNING:** Methods to sync TO Meetup have not been completed. 
-#    So any changes to the database are local.
-    
 
 
