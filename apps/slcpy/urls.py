@@ -7,7 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # ----------------------- Home
-    url(r'^$', 'slcpy.views.home.main_view', name='home'),
+    url(r'^$', 'meetup.views.home_view', name='home'),
 
     # add frame for meetup home
     # url(r'^meetup-home$', 'slcpy.views.home.meetup_home_view', name="meetup-home"),
