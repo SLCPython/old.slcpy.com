@@ -1,9 +1,0 @@
-{% extends "slcpy/_base.html" %}
-{% load staticfiles %}
-
-
-{% block body %}
-<!--  <iframe src="http://www.w3schools.com"></iframe>  -->
-<!--  <iframe src="http://www.meetup.com/Salt-Lake-City-Python-Web-Developers/"></iframe> -->
-<iframe seamless sandbox srcdoc="{{ meetup_home|safe }}"></iframe>
-{% endblock %}
