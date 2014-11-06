@@ -9,6 +9,11 @@ urlpatterns = patterns('',
     # ----------------------- Home
     url(r'^$', 'meetup.views.home_view', name='home'),
 
+    # ----------------------- Home menu
+    # have a home page which is only different because it has the menu bar
+    # with different css so it's always shown even if no javascript
+    # url(r'^/#/$','...',name="home_menu")
+    
     # add frame for meetup home
     # url(r'^meetup-home$', 'slcpy.views.home.meetup_home_view', name="meetup-home"),
 
