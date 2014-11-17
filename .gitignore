@@ -43,3 +43,6 @@ nosetests.xml
 .settings
 *.swp
 *.sublime*
+
+# bower
+bower_components/
