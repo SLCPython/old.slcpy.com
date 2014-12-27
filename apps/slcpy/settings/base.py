@@ -10,7 +10,12 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+BASE_DIR = os.path.dirname(\
+    os.path.abspath(\
+        os.path.join(os.path.dirname(__file__),"..","..")
+        )
+    )
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -28,9 +33,11 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(BASE_DIR, "slcpy", "templates"),
-    os.path.join(BASE_DIR, "meetup", "templates"),    
+    os.path.join(BASE_DIR,"apps", "slcpy", "templates"),
+    os.path.join(BASE_DIR,"apps", "meetup", "templates"),    
 )
+
+TEMPLATE_PATH = ":".join(TEMPLATE_DIRS)
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -103,19 +110,25 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "..", "..", "globalstatic")
-MEDIA_ROOT = os.path.normpath(os.path.join(BASE_DIR, "..", "..", "media"))
+STATIC_ROOT = os.path.join(BASE_DIR, "globalstatic")
+MEDIA_ROOT = os.path.normpath(os.path.join(BASE_DIR, "media"))
 
 # Haystack settings
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
-        'PATH': os.path.normpath(os.path.join(BASE_DIR, "..", "..", "whoosh_index")),
+        'PATH': os.path.normpath(os.path.join(BASE_DIR, "whoosh_index")),
     }
 }
 
 # Our site can handle this
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+
+# ########################################################################### #
+
+
+GITHUB_URL = "https://github.com/SLCPython"
 
 # Meetup
 
