@@ -6,63 +6,68 @@
 <div class="jumbotron">
   <section>
     <h1> Salt Lake City Python Developers </h1>
-    <br>
     {% block jumbotron-home %}
     {% endblock %}
   </section>
 </div>
 
 <!-- - - - - - - - - - -  About us - - - - - - - - - - - - -->
-<section id="#about-us">    
-    <h3> About Us </h3> 
-    <p>
-        A Sugar House-based python web developer meetup. We are interested in promoting  python development, but also welcome wisdom found in other programming languages. Avid and aspiring programmers alike are welcome to join us. 
-    </p>
-    <p>
+<section class="main-page" id="#about-us">    
+  <h3> About Us </h3> 
+  <p>
+    A Sugar House-based python web developer meetup. We are interested in promoting  python development, but also welcome wisdom found in other programming languages. Avid and aspiring programmers alike are welcome to join us. 
+  </p>
+  <p>
     We alternate our meeting between the first Wednesday and the first Thursday of the month at Zaniac Sugar House (the old Sugar House coffee location; the big purple building).
-    </p>
-    <p>
-        For current news follow us using <a href="{{ slcpy_meetup_url_join }}">Meetup.com</a>
-    </p>        
+  </p>
+  <p>
+    For current news follow us using <a href="{{ slcpy_meetup_url_join }}">Meetup.com</a>
+  </p>        
 </section>
 
 <!-- - - - - - - - - - - Resources - - - - - - - - - - - - -->
-<section id="#resources">    
-    <h3> Resources </h3> 
-    <ul>
-        <li>
-            <a href="{{ slcpy_meetup_url_join }}">SLCPython Meetup</a>
-        </li>
-        <li>
-            <a href="https://github.com/SLCPython">SLCPython Github</a>
-        </li>    
-    </ul>
-    </br>
-    </br>
-    </br>        
+<section class="main-page resources">    
+  <h3> Group Resources </h3> 
+  <ul>
+    <li>
+      <a href="{{ slcpy_meetup_url_join }}">SLCPython Meetup</a>
+    </li>
+    <li>
+      <a href="https://github.com/SLCPython">SLCPython Github</a>
+    </li>    
+  </ul>       
 </section>    
  
 <!-- - - - - - - - - - -  Sponsors - - - - - - - - - - - - -->   
-<section id="#sponsors">
-    <h3> Primary Sponsors </h3>
-    <ul id='sponsors-list'>
-        <li>
-            <a href="https://www.zaniaclearning.com/">
-                <img class="sponsor" src="{% static 'img/sponsors/zaniac-500x200.png' %}" alt="Zaniac"/>            
-            </a>      
-        </li>
-        <li>
-            <a href="http://www.teksystems.com/">
-                <img class="sponsor"  src="{% static 'img/sponsors/TEK Systems-517x167.png' %}" alt="TEKSystems"/>            
-            </a>      
-        </li>
-        <li>
-            <a href="https://www.bluehost.com/">
-                <img class="sponsor" src="{% static 'img/sponsors/bluehost-624x165.png' %}" alt="BlueHost"/>            
-            </a>             
-        </li>        
-        <!-- TODO: add other sponsors -->
-        <!-- TODO: add images for sponsors -->
-    </ul>
+<section class="main-page" id="#sponsors">
+  <h3> Primary Sponsors </h3>
+  
+  <div class="sponsor">
+    <a href="https://www.zaniaclearning.com/">
+      <img class="sponsor" src="{% static 'img/sponsors/zaniac-500x200.png' %}" alt="Zaniac"/>            
+    </a>      
+  </div>
+
+  <div class="sponsor">
+    <a href="http://www.teksystems.com/">
+      <img class="sponsor"  src="{% static 'img/sponsors/TEK Systems-517x167.png' %}" alt="TEKSystems"/>            
+    </a>      
+  </div>
+
+  <div class="sponsor">
+    <a href="http://neutroninteractive.com/">
+      <img class="sponsor" src="{% static 'img/sponsors/Neutron-Interactive-625x292.jpg' %}" alt="Neutron Interactive"/>            
+    </a>             
+  </div>
+
+  <div class="sponsor">
+    <a href="https://www.bluehost.com/">
+      <img class="sponsor" src="{% static 'img/sponsors/bluehost-624x165.png' %}" alt="BlueHost"/>            
+    </a>             
+  </div>
+
+
+    <!-- TODO: add other sponsors -->
+    <!-- TODO: add images for sponsors -->
 </section>
 {% endblock %}
