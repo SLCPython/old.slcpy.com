@@ -18,16 +18,16 @@ urlpatterns = patterns('',
     # url(r'^meetup-home$', 'slcpy.views.home.meetup_home_view', name="meetup-home"),
 
     # ----------------------- Events
-    url(r'^events$','meetup.views.view_upcoming_past_events',name='events'),
+    url(r'^events/$','meetup.views.view_upcoming_past_events',name='events'),
     
     # ----------------------- API urls
     #url(r'^api/', include(tagged_post.urls)),
 
     # ----------------------- 3rd party urls
-    url(r'^search/', include('haystack.urls', namespace='search')),
+    url(r'^search/$', include('haystack.urls', namespace='search')),
 
     # ----------------------- admin urls
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/$', include(admin.site.urls)),
 )
 
 if settings.DEBUG:
