@@ -14,7 +14,8 @@ from django.shortcuts import render,render_to_response, get_object_or_404, redir
 from django.template import RequestContext
 from django.core.context_processors import csrf
 from django.core.urlresolvers import reverse
-from meetup.api import meetup_client,add_etherpad_urls 
+from meetup.api import meetup_client, add_etherpad_urls 
+from urllib2 import HTTPError
 
 SLCPY_MEETUP_URL = settings.SLCPY_MEETUP_URL
 
@@ -44,8 +45,11 @@ def home_view (request):
     context = RequestContext(request)    
     context_dict = dict()        
     add_base_view_items(context_dict)
-    next_event = meetup_client.get_next_group_event(tzinfo=VIEW_TIMEZONE) 
-    context_dict['next_event'] = next_event
+    try:
+        next_event = meetup_client.get_next_group_event(tzinfo=VIEW_TIMEZONE) 
+        context_dict['next_event'] = next_event
+    except HTTPError:
+        pass
     return render_to_response("meetup/index.html",context_dict,context)
 
 @cache_response
