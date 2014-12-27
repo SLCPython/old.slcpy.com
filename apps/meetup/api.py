@@ -90,6 +90,13 @@ def enrich_event_data (event_data,tzinfo=""):
         as well
     
     """
+    if event_data['status'] == "upcoming":
+        event_data['css_style'] = "panel-success"
+    elif event_data['status'] == "past":
+        event_data['css_style'] = "panel-info"
+    else:
+        event_data['css_style'] = "panel-default"
+
     event_data['timestamp'] = from_meetup_timestamp(event_data['time'],tzinfo)
     event_data['venue']['google_url'] = venue_google_search_url(event_data['venue'])
     return event_data
