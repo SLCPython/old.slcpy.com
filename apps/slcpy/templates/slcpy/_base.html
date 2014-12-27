@@ -2,82 +2,64 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <!-- ============================== HEAD =================================== -->
-  <head>
-  	<meta charset="utf-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	<!-- - - - - - - - - - - title - - - - - - - - - - - - - - - -->    
-    <title>SLCPy.com {% block title %}{% endblock %}</title>
-    
-  	<!-- - - - - - - - - - -  css content - - - - - - - - - - - - - - - -->    
-    {% block pre_css %}
-    {% endblock %}    
-    
-    <!-- Bootstrap  3.0 -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-theme.min.css' %}" />
-    <!-- custom sass-css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+<head>
+	<meta charset="utf-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- - - - - - - - - - - title - - - - - - - - - - - - - - - -->    
+  <title>SLCPy.com {% block title %}{% endblock %}</title>
+  
+	<!-- - - - - - - - - - -  css content - - - - - - - - - - - - - - - -->
+  {% block css %}
+  <!-- {{ block.super }} to extend block -->
 
-    {% block extra_css %}
-    {% endblock %}
-    
-    <!-- - - - - - - - - - -  js content - - - - - - - - - - - - - - - -->    
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-     <![endif]-->    
-    
-  </head>
+  <!-- Bootstrap  3.0 -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-flatly.min.css' %}" />
+
+  <!-- custom sass-css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+  {% endblock %}
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+   <![endif]-->    
+  
+</head>
   
   
 <!-- ============================== BODY =================================== -->  
-  <body id='home'>
-    <!-- - - - - - - - - - -  navigation toolbar - - - - - - - - - - - - -->
-    <header>
-      <a href="#" id="logo">
-        <img src="{% static 'img/SLCPython-logo-70.png' %}" alt="SLCPython"/>
-      </a>
-      <span id="title">SLCPython</span>
-      <nav>
-        <a id="menu-icon"></a>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/events">Events</a></li>
-          <li><a href="{{ slcpy_meetup_url_join }}">Join our Meetup!</a></li>
-          <!-- TODO: <li><a href="/contact-us">Contact Us</a></li>                                 -->
-        </ul>
-      </nav>
-    </header>
-    <div id='wrap'>
-      <!-- - - - - - - - - - -  primary content - - - - - - - - - - - - -->
-      <section>
-        <div class="main-view">
-          {% block body %}
-          {% endblock %}
-        </div>
-      </section>
-    </div>
-  
-    <!-- - - - - - - - - - -  page footer - - - - - - - - - - - - - - - -->
-    <footer>
-        {% block footer %}
-        <!-- TODO: add contact us link -->
-        <!-- TODO: add suggestions box link -->                
+<body id='home'>
+  <img class='background' src="{% static 'img/background/peaks-just-west-of-monte-cristo.jpg' %}" alt=" "/>
+
+  <!-- - - - - - - - - - -  navigation toolbar - - - - - - - - - - - - -->
+  {% include "slcpy/_includes/navbar.html" %}
+
+  {% include "slcpy/_includes/fork_me_on_github.html" %}
+
+  <div id='wrap'>
+    <!-- - - - - - - - - - -  primary content - - - - - - - - - - - - -->
+    {% block content %}
+    <section>
+      <div class="main-view">
+        {% block body %}
         {% endblock %}
-        <p>
-            Created @ 2014 SLCPython → [Dylan, Faris, Joseph, Michael, Sam,  Eric]
-        </p>
-    </footer>
-    
-    <!-- - - - - - - - - - -  js content - - - - - - - - - - - - - - - -->
-    {% block extra_js %}
+      </div>
+    </section>
     {% endblock %}
-    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>    
+  </div>
+
+  <!-- - - - - - - - - - -  page footer - - - - - - - - - - - - - - - -->
+  {% include "slcpy/_includes/footer.html" %}
+
+  <!-- - - - - - - - - - -  js content - - - - - - - - - - - - - - - -->
+  {% block js %}
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>    
+  {% endblock %}
 
 
-  </body>
+</body>
 </html>
