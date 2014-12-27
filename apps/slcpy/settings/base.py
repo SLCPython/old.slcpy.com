@@ -147,5 +147,8 @@ MEETUP_API_KEY = ""
 # (optional) This is the default group id to get information from  
 MEETUP_GROUP_ID = 12004972
 
-
+try:
+    from local_settings import *
+except:
+    pass
 
