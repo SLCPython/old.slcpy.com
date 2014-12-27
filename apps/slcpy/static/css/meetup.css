@@ -1,0 +1,39 @@
+.meetup-page-header {
+    margin-bottom: 50px;
+}
+
+section.meetup-event {
+    background: #D8D8D8;
+    padding: 20px;
+    
+    /*Rounded Corners*/
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;  
+}
+
+section.meetup-event-upcoming {
+    background: #FCD512;
+    border: solid#FCB912;
+    padding: 20px;
+    margin: 1px;    
+    
+    /*Rounded Corners*/
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;  
+
+}
+
+section.meetup-event-past {
+    background: #8DF0E7;
+    border: solid #76C5BF;
+    padding: 20px;
+    margin: 1px;
+    
+    /*Rounded Corners*/
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;  
+
+}

@@ -1,23 +1,171 @@
-body {
-  padding-top: 50px;
+
+a {
+    text-decoration: none;
+  /* First we need to help some browsers along for this to work.
+     Just because a vendor prefix is there, doesn't mean it will
+     work in a browser made by that vendor either, it's just for
+     future-proofing purposes I guess. */
+  -o-transition:.3s ease;
+  -ms-transition:.3s ease;
+  -moz-transition:.3s ease;
+  -webkit-transition:.3s ease;
+  /* ...and now for the proper property */
+  transition:.3s ease;
 }
+
+
+a {
+    font-weight: bold;
+}
+
+a:hover {
+    text-shadow: 0.5px 0px 0px #228667 , 0px 0.5px 0px #228667, -0.5px 0px 0px #228667, 
+  0px -0.5px 0px #228667;
+
+}
+
+
+img.background {
+    position: fixed;
+    height:100%;
+    width: 100%;
+    bottom:0px;
+    z-index:-1;
+    vertical-align: none;
+    opacity: 0.35;
+}
+
+section.main-page {
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+section.main-page h3 {
+    font-size: 38px;
+}
+
+section.main-page ul {
+    list-style: none;
+    font-size: 30px;
+}
+
+/*  JUMBOTRON */
+.jumbotron {
+    background-color: #DBDBDB;
+    /*Rounded Corners*/
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;      
+
+}
+
+.jumbotron h1 {
+    margin-bottom: 70px;
+    margin-left: 10px;
+    font-size: 60px;
+    font-family: sans-serif;
+    text-shadow: 1.8px 1.5px 2.5px #eee, 2.8px 2.5px 1.5px #707070;    
+    letter-spacing: 1.1px;
+}
+
+.jumbotron-footer {
+    font-size: 15px;
+    margin-top: 20px;
+    margin-left: 10px;    
+}
+
+
+/* PANELS */
+
+.panel {
+    /*Rounded Corners*/
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; 
+    max-width: 600px;
+    margin-left: auto ;
+    margin-right: auto ;
+}
+
+.panel a {
+    color: #1B4B5E;
+}
+.panel a:hover {
+    color: #222E40;
+}
+
+
+
+
+/* Navigation Bar */
+
+nav.navbar {
+    min-height: 60px;
+}
+
+a.navbar-brand {
+    padding: 10px;
+}
+
+.navbar-header {
+    vertical-align: middle;
+}
+
+.navbar-header img {
+    height: 45px;
+    display: inline-block;    
+}
+
+.navbar-header h1 {
+    color: #FFF;
+    display: inline-block;
+    font-size:35px;
+    letter-spacing: 1.1px;
+    padding: 2px;
+    margin: 0px;
+    vertical-align: middle;    
+    text-align: left;
+
+}
+
+.navbar-toggle-container {
+    margin: 5px;
+}
+
+nav li {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.collapse.navbar-collapse {
+    margin: 40px 20px 10px 10px;
+    float: right;
+    font-size: 25px;
+}
+
 
 /* main */
 
 .main-view {
   padding: 40px 15px;
-  text-align: center;
-}
-
-.main-view section {
-    text-align: left;
-}
-
-.main-view h3 {
   text-align: left;
 }
 
-.main-view .chat {
-  border: 5px;
+/* Sponsors list */
+
+.sponsor {
+    display: inline-block;
+    margin: 10px;
+    background: #FFF;
 }
 
+.sponsor img {
+    max-height: 100px;
+    height: 100%;
+    display: inline-block;
+
+    /*Rounded Corners*/
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    border-radius: 13px; 
+}
