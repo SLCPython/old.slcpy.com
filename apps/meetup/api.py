@@ -172,7 +172,7 @@ class MeetupClient(object):
             group_id = settings.MEETUP_GROUP_ID
         return self.http_response("/2/events",params=dict(group_id=group_id))['results']
       
-    def get_next_group_event (self,group_id=MEETUP_GROUP_ID,tzinfo=""):
+    def get_next_group_event (self,group_id=MEETUP_GROUP_ID,tzinfo="utc"):
         """ Recover the next upcoming event for a group
 
         default group is from ``django.conf.settings.MEETUP_GROUP_ID``. If None then
@@ -203,7 +203,7 @@ class MeetupClient(object):
         params = dict(group_id=group_id,status="upcoming,past")
         events = self.http_response("/2/events",params=params)['results']
         for i in range(len(events)):
-            enrich_event_data(events[i])
+            enrich_event_data(events[i],tzinfo)
         return list(reversed(events))
             
     def get_group_info (self,group_id=None):

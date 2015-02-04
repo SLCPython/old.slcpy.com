@@ -18,10 +18,11 @@ from meetup.api import meetup_client, add_etherpad_urls
 from urllib2 import HTTPError
 
 SLCPY_MEETUP_URL = settings.SLCPY_MEETUP_URL
+USE_TZ = getattr(settings,"USE_TZ",True)
 
 # ########################################################################### #
 
-VIEW_TIMEZONE = "" #"America/Denver"
+VIEW_TIMEZONE = "America/Denver"
                         
 # ########################################################################### #
 
