@@ -1,5 +1,6 @@
 {% extends "slcpy/index.html" %}
 {% load staticfiles %}
+{% load add_to_calendar %}
 
 {% block extra_css %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/meetup.css' %}" />
@@ -13,10 +14,19 @@
   <div class="panel-heading">   
   <h2><strong>Upcoming Event :</strong> <a href="{{ next_event.event_url }}">{{ next_event.name }}</a></h2>
   <ul>
-    <li><strong> When: {{ next_event.timestamp | date:"l, F jS" }} at {{ next_event.timestamp | date:"g:i a" }}</strong></li>
     <li>
-      <strong> Where: {{ next_event.venue.name }} 
+      When:
+      <strong>
+        {{ next_event.timestamp | date:"l, F jS" }} 
+        at {{ next_event.timestamp | date:"g:i a" }} 
+        <!-- <a href="{{ next_event|google_calendarize }}">+</a> -->
+        </strong>
+    </li>
+    <li>
+      Where: 
+      <strong>
         <a href="{{ next_event.venue.google_url }}">
+          {{ next_event.venue.name }}         
           ({{ next_event.venue.address_1 }})
         </a>
       </strong>

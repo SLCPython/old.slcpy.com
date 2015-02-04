@@ -21,7 +21,7 @@
   <div class="panel-heading">
     <h2><strong>{{ ev.status.capitalize }} Event :</strong> <a href="{{ ev.event_url }}">{{ ev.name }}</a></h2>
     <ul>
-      <li><strong> When: {{ ev.timestamp | date:"l, F jS" }} at {{ next_event.timestamp | date:"g:i a" }} </strong></li>
+      <li><strong> When: {{ ev.timestamp | date:"l, F jS" }} at {{ ev.timestamp | date:"g:i a" }} </strong></li>
       <li>
         <strong> Where: {{ ev.venue.name }} 
           <a href="{{ ev.venue.google_url }}">
