@@ -131,7 +131,7 @@ a.navbar-brand {
 
 @media (min-width: 768px) {
     .navbar-header img {
-        height: 100px;
+        height: 90px;
         margin-right: 20px;
     }
 }
