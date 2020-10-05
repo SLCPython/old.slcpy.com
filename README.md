@@ -9,7 +9,7 @@ Official Repo of SLCPython's website
 
 ## Contributing
 
-### Fork & Clone the Repo
+### Fork & Clone the Repository
 
 1. `git clone git@github.com:<your github username>/slcpy.com`
 2. `cd slcpy`
